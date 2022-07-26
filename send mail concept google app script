@@ -1,0 +1,11 @@
+function sendemail() {
+  
+to = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1fv5dDhhTxPFGe3W8BSqNLVVv6eCLrx6oHW3cmiAUArk/edit#gid=783479587").getSheetByName("Email to Send").getRange("A2").getValue();
+
+subject = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1fv5dDhhTxPFGe3W8BSqNLVVv6eCLrx6oHW3cmiAUArk/edit#gid=783479587").getSheetByName("Email to Send").getRange("B2").getValue();
+
+Email_body = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1fv5dDhhTxPFGe3W8BSqNLVVv6eCLrx6oHW3cmiAUArk/edit#gid=783479587").getSheetByName("Email to Send").getRange("C2").getValue();
+
+MailApp.sendEmail(to,subject,Email_body)
+
+}
